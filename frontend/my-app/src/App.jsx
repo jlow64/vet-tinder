@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import LoginPage from './components/loginPage'
 import FilterModal from './components/FilterModal'
+import MapView from "./components/MapView";
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.css'
@@ -23,6 +24,9 @@ function App() {
       <Router>
           <Route exact path="/">
           <FilterModal emailValidFalse={emailValidFalse}/>
+          </Route>
+          <Route exact path="/map">
+          <MapView/>
           </Route>
       </Router>
     </div>

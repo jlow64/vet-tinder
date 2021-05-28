@@ -12,6 +12,7 @@ const FilterModal = ({ emailValidFalse }) => {
     const [address, setAddress] = useState('');
     const [radius, setRadius] = useState(5)
     const [debouncedAddress, setDebouncedAddress] = useState(address);
+    const [curLocation,setCurLoaction] = useState({});
     const handleClose = () => setShow(false);
 
     useEffect(() => {
@@ -28,13 +29,23 @@ const FilterModal = ({ emailValidFalse }) => {
         console.log(debouncedAddress);
     }, [debouncedAddress]);
 
+    function getCurrentLocation() {
+        navigator.geolocation.getCurrentPosition((pos) =>{
+            setCurLoaction({
+                lat:pos.coords.latitude,
+                lng:pos.coords.longitude
+            })
+            console.log(curLocation);
+        } ,() => null);
+    }
+    
     return (
         <>
             <Modal show={show} onHide={handleClose}>
+            <Button variant="secondary" onClick={getCurrentLocation}> Locate my position</Button>
                 <Modal.Header >
                     <Modal.Title>Please fill in the following fields:</Modal.Title>
                 </Modal.Header>
-
                 <Modal.Body>
                     <Form>
                         <Form.Group controlId="modalForm.AddressInput1">
@@ -74,6 +85,7 @@ const FilterModal = ({ emailValidFalse }) => {
                     <Button variant="secondary" onClick={handleClose, emailValidFalse}>Go Back</Button>
                     <Button variant="primary" onClick={handleClose}>Search for Vets!</Button>
                 </Modal.Footer>
+                
             </Modal>
         </>
     );

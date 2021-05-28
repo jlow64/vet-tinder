@@ -1,6 +1,7 @@
 import React from 'react'
-import LoginPage from './components/LoginPage'
+import LoginPage from './components/loginPage'
 import FilterModal from './components/FilterModal'
+import List from './components/List'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.css'
@@ -14,6 +15,9 @@ function App() {
           </Route>
           <Route exact path="/FilterModal">
             <FilterModal />
+          </Route>
+          <Route exact path="/List">
+            <List />
           </Route>
       </Router>
     </div>

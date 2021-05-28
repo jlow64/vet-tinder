@@ -5,7 +5,7 @@ import '../componentscss/LoginPage.css';
 import axios from '../apis/backendReq';
 
 
-const LoginPage = ({emailValidTrue}) => {
+const LoginPage = ({ emailValidTrue }) => {
   const [email, setEmail] = useState('');
 
   const logIn = (e) => {
@@ -15,9 +15,12 @@ const LoginPage = ({emailValidTrue}) => {
         email: email,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data !== "") {
             emailValidTrue();
+            alert("Success!")
+        } 
+        else {
+          alert("Not a registered/valid email address!");
         }
       });
   };

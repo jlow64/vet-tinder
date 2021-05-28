@@ -1,0 +1,40 @@
+
+.card { 
+  margin-left: 50px;
+  }
+  
+  
+  .card-text {
+    padding: 5px;
+  }
+  
+  .card-title {
+    padding: 10px;
+    color: black; 
+  }
+  
+  .address {
+    color: blue;
+    font-size: small;
+  }
+  
+  .vetTitle {
+      color: black;
+      font-weight: bold;
+  }
+
+  .card-columns {
+      background-color: lightcyan;
+      margin: auto;
+      width: 90%;
+  }
+
+  #vetList {
+      background-color: lightcyan;
+  }
+
+  h1 {
+      text-align: center;
+      color: black;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }

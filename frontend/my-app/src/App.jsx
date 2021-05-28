@@ -17,7 +17,7 @@ function App() {
             <FilterModal />
           </Route>
           <Route exact path="/List">
-            <List />
+            <List location= {{lat: -36.8769998, lng: 174.7102575}} radius={5}/>
           </Route>
       </Router>
     </div>

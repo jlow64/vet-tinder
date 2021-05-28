@@ -3,38 +3,39 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
-import vets from './../../src/vets.json';
-import axios from 'axios';
+import axios from '../apis/backendReq';
 import './../../src/componentscss/List.css'
-console.log(vets)
 
-const List = () => {
-    const [data, setData] = useState('');
-    useEffect(() => {
-        // GET request fetches list of places
-        axios.get('http://localhost:3000/places')
-            .then(response => setData(response.data.total));
+const List = (props) => {
+    const [places, setPlaces] = useState([]);
+    useEffect(async () => {
+        await axios.post('/distance', {
+             location: props.location, 
+             radius: props.radius,
+         })
+             .then(response => setPlaces(response.data));
+             places.forEach((place) => {console.log(place)})
+             console.log(places[2]);
     }, []);
-    
+
     return (
     <div id='vetList'>
         <h1> List of Places </h1>
         <CardColumns>
-        {
-            vets.map(vet=> {
+            {places.map(place=> {
                 return <Card bg ="light" border="secondary" style={{ width: '18rem' }}> 
                 <Card.Body>
                     <Card.Title>
-                        <div className="vetTitle">{vet.name} </div> 
+                        <div className="vetTitle">{place.name} </div> 
                     </Card.Title>
                     <Card.Text> 
-                        <div className="address"> {vet.vicinity}</div>
+                        <div className="address"> {place.vicinity}</div>
                     </Card.Text> 
                     <Button variant="info">Book</Button>
                 </Card.Body>
                 </Card>
             })
-        }
+        } }
         </CardColumns>
     </div>
     );

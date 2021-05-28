@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/jlow64/vet-tinder#readme",
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.1.16",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "googleapis": "^74.2.0",
     "mongoose": "^5.12.11"
   }
 }

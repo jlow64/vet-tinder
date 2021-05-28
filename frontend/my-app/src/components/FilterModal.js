@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import '../componentscss/FilterModal.css'
+import { Link } from 'react-router-dom'
 
 const FilterModal = ({ modalState }) => {
     const [show, setShow] = useState(true);
@@ -70,8 +71,10 @@ const FilterModal = ({ modalState }) => {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose, modalState}>Go Back</Button>
-                    <Button variant="primary" onClick={handleClose}>Search for Vets!</Button>
+                    <Button variant="secondary" type="submit" onClick={handleClose, modalState}>Go Back</Button>
+                    <Link to='/search'>
+                        <Button variant="primary" onClick={handleClose}>Search for Vets!</Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
         </>

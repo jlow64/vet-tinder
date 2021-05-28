@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 //import searchbar from '../apis/GoogleSearchBar'
 import RangeSlider from 'react-bootstrap-range-slider'
 import Modal from 'react-bootstrap/Modal'
@@ -7,7 +8,7 @@ import Form from 'react-bootstrap/Form'
 import '../componentscss/FilterModal.css'
 
 
-const FilterModal = ({ emailValidFalse }) => {
+const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
     const [show, setShow] = useState(true);
     const [address, setAddress] = useState('');
     const [radius, setRadius] = useState(5)
@@ -47,7 +48,7 @@ const FilterModal = ({ emailValidFalse }) => {
                                 value={radius}
                                 onChange={event => setRadius(event.target.value)}
                                 min={5}
-                                max={50}
+                                max={20}
                             />
                         </Form.Group>
                         <Form.Group controlId="modalForm.PetClinicType">
@@ -72,7 +73,9 @@ const FilterModal = ({ emailValidFalse }) => {
 
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose, emailValidFalse}>Go Back</Button>
-                    <Button variant="primary" onClick={handleClose}>Search for Vets!</Button>
+                    <Link to='/Search'>
+                        <Button variant="primary" onClick={passAddress(debouncedAddress), passRadius(radius)}>Search for Vets!</Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
         </>

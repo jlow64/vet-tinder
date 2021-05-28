@@ -35,7 +35,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
             setCurLoaction({
                 lat:pos.coords.latitude,
                 lng:pos.coords.longitude
-            })
+            });
             console.log(curLocation);
         } ,() => null);
     }

@@ -48,7 +48,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                                 value={radius}
                                 onChange={event => setRadius(event.target.value)}
                                 min={5}
-                                max={50}
+                                max={20}
                             />
                         </Form.Group>
                         <Form.Group controlId="modalForm.PetClinicType">

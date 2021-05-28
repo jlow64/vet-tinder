@@ -37,9 +37,7 @@ function App() {
           <Route path="/Search">
            <div>{radius}</div>
           </Route>
-          <Route exact path="/List">
-            <List location= {{lat: -36.8769998, lng: 174.7102575}} radius={5}/>
-          </Route>
+          <Route path="/List" exact component={List} />
           <Route exact path="/map">
           <MapView/>
           </Route>

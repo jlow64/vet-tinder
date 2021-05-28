@@ -1,19 +1,28 @@
-import React from 'react'
-import LoginPage from './components/LoginPage'
+import React, { useState } from 'react'
+import LoginPage from './components/loginPage'
 import FilterModal from './components/FilterModal'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.css'
 
 function App() {
+  const [emailValid, setEmailValid] = useState(false);
+  function emailValidTrue() {
+    setEmailValid(true);
+  }
+  function emailValidFalse() {
+    setEmailValid(false);
+  }
+
+  if (!emailValid) {
+    return <LoginPage emailValidTrue={emailValidTrue} />
+  }
+
   return (
     <div className="App">
       <Router>
           <Route exact path="/">
-            <LoginPage /> 
-          </Route>
-          <Route exact path="/FilterModal">
-            <FilterModal />
+          <FilterModal emailValidFalse={emailValidFalse}/>
           </Route>
       </Router>
     </div>

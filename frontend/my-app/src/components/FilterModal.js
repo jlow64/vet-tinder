@@ -6,7 +6,8 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import '../componentscss/FilterModal.css'
 
-const FilterModal = ({ modalState }) => {
+
+const FilterModal = ({ emailValidFalse }) => {
     const [show, setShow] = useState(true);
     const [address, setAddress] = useState('');
     const [radius, setRadius] = useState(5)
@@ -70,7 +71,7 @@ const FilterModal = ({ modalState }) => {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose, modalState}>Go Back</Button>
+                    <Button variant="secondary" onClick={handleClose, emailValidFalse}>Go Back</Button>
                     <Button variant="primary" onClick={handleClose}>Search for Vets!</Button>
                 </Modal.Footer>
             </Modal>

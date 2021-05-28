@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   let email = req.body.email;
+  console.log(email);
   let user = null;
   // check if user in database
   profiles.forEach((person) => {

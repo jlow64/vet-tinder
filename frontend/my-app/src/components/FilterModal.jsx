@@ -84,7 +84,13 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
 
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose, emailValidFalse}>Go Back</Button>
-                    <Link to='/Search'>
+                    <Link to={{
+                        pathname: "/List",
+                        aboutProps: {
+                            location: curLocation,
+                            radius:radius
+                        }
+                    }}>
                         <Button variant="primary" onClick={passAddress(debouncedAddress), passRadius(radius)}>Search for Vets!</Button>
                     </Link>
                 </Modal.Footer>

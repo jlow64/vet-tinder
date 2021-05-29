@@ -33,6 +33,16 @@
       background-color: lightcyan;
   }
 
+  #row-container {
+      display: flex;
+      flex-direction: row;
+      max-width: 100%;
+  }
+
+  #col1 {
+      width: 60%;
+  }
+
   h1 {
       text-align: center;
       color: black;

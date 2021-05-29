@@ -41,10 +41,10 @@ npm start
 - backend 
 - frontend integration
 ### Justin 
-- project documnetation
+- project documentation
 - frontend
 - integration
 ### Ruth
-- project documnetation
+- project documentation
 - frontend
 - integration

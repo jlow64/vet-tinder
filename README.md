@@ -8,3 +8,10 @@ Repo for EzyVet Hackathon
 
 ### Backend : Go to backend then do `npm start`
 
+## Individual contributions
+
+### Anmol 
+
+### Justin 
+
+### Ruth

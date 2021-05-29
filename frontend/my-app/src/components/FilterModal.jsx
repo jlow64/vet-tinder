@@ -58,8 +58,8 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                             <RangeSlider
                                 value={radius}
                                 onChange={event => setRadius(event.target.value)}
-                                min={5}
-                                max={20}
+                                min={1}
+                                max={15}
                             />
                         </Form.Group>
                         <Form.Group controlId="modalForm.PetClinicType">
@@ -73,11 +73,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                             </Form.Control>
                         </Form.Group>   
                         <Form.Group controlId="modalForm.UrgentType">
-                            <Form.Label>Is this an Emergency?</Form.Label>
-                            <Form.Control as="select">
-                            <option>Yes</option>
-                            <option>No</option>
-                            </Form.Control>
+                            <Form.Check type="checkbox" label="Is an emergency clinic required?" />
                         </Form.Group>   
                     </Form>
                 </Modal.Body>

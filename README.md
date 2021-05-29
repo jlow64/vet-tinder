@@ -33,10 +33,6 @@ npm start
 
 **Note:** You do not need to run `npm install` everytime. Only when a new package is added.
 
-## How to run both servers
-### Frontend : Go to frontend/my-app then do `npm start`
-
-### Backend : Go to backend then do `npm start`
 
 ## Individual contributions
 

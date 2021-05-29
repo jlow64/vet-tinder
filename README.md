@@ -37,7 +37,14 @@ npm start
 ## Individual contributions
 
 ### Anmol 
-
+- Setup project 
+- backend 
+- frontend integration
 ### Justin 
-
+- project documnetation
+- frontend
+- integration
 ### Ruth
+- project documnetation
+- frontend
+- integration

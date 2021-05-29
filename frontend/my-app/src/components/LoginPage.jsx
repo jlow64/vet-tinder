@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import '../componentscss/LoginPage.css';
 import axios from '../apis/backendReq';
 
-
 const LoginPage = ({ emailValidTrue }) => {
   const [email, setEmail] = useState('');
 

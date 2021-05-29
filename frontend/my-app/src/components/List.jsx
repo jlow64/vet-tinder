@@ -8,6 +8,7 @@ import MapView from './MapView';
 
 const List = (props) => {
   const [places, setPlaces] = useState([]);
+  // api fetch to the backend
   useEffect(async () => {
     console.log(props.location.aboutProps);
     await axios
@@ -21,7 +22,7 @@ const List = (props) => {
     });
     console.log(places[2]);
   }, []);
-
+  // returns component which renders vets in range + map with markers. Takes in the places as a prop.
   return (
     <div id='vetList'>
       <h1> List of Places </h1>

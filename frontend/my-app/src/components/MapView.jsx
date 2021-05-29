@@ -19,6 +19,7 @@ const center = {
 
 export default function MapView({ places }) {
   const [markerIndex, setMarkerIndex] = useState(null);
+  // function which allocates an index to each marker. Markers ares displayed based on vet practice and a hover displays the label 
   const markerList = places.map((place, index) => {
     return <Marker position={place.location} label={index == markerIndex ? place.name : ''} onMouseOver={() => setMarkerIndex(index)} labelStyle={{background: '#fff'}} />
   });

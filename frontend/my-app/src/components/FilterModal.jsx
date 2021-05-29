@@ -9,13 +9,18 @@ import '../componentscss/FilterModal.css'
 
 
 const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
+    // this use state determines whether the modal will be displayed or not
     const [show, setShow] = useState(true);
+    // the address isn't linked to the google search bar, but has functionality
     const [address, setAddress] = useState('');
-    const [radius, setRadius] = useState(5)
+    // used to stop API throttling by setting a timeout for each onChange
     const [debouncedAddress, setDebouncedAddress] = useState(address);
+    // use state for current location 
     const [curLocation,setCurLoaction] = useState({});
+    const [radius, setRadius] = useState(5);
     const handleClose = () => setShow(false);
 
+    // used to handle onChange for address
     useEffect(() => {
         const timerId = setTimeout(() => {
             setDebouncedAddress(address);
@@ -26,10 +31,12 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
         };
     }, [address]);
 
+    // only outputs the debounced address when address onChange has finished timeout
     useEffect(() => {
         console.log(debouncedAddress);
     }, [debouncedAddress]);
 
+    // current function to get user location from browser, then set state of the curLocation
     function getCurrentLocation() {
         navigator.geolocation.getCurrentPosition((pos) =>{
             setCurLoaction({
@@ -39,6 +46,9 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
             console.log(curLocation);
         } ,() => null);
     }
+
+    // modal component exports a form which currently only uses the get location button and range slider for inputs
+    // user can then go back to loading screen or submit position to get calculated if the 'locate my position' button is pressed
     
     return (
         <>

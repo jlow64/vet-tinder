@@ -38,9 +38,6 @@ function App() {
            <div>{radius}</div>
           </Route>
           <Route path="/List" exact component={List} />
-          <Route exact path="/map">
-          <MapView/>
-          </Route>
       </Router>
     </div>
   );

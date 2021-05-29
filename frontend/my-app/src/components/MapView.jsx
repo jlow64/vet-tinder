@@ -3,8 +3,6 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow,
-  useJsApiLoader,
 } from '@react-google-maps/api';
 import mapStyles from '../mapStyles';
 const containerStyle = {
@@ -25,7 +23,7 @@ export default function MapView({ places }) {
     return (
       <Marker
         position={place.location}
-        label={index == markerIndex ? place.name : ''}
+        label={index === markerIndex ? place.name : ''}
         onMouseOver={() => setMarkerIndex(index)}
         labelStyle={{ background: '#fff' }}
         icon={{

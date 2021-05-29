@@ -43,6 +43,11 @@
       width: 60%;
   }
 
+  #col2 {
+      width: 40%;
+      margin-left: 10px;
+}
+
   h1 {
       text-align: center;
       color: black;

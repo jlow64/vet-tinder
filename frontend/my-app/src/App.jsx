@@ -6,6 +6,7 @@ import MapView from "./components/MapView";
 import List from './components/List'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css'
+import Search from './components/Search';
 
 function App() {
   const [emailValid, setEmailValid] = useState(false);
@@ -23,11 +24,10 @@ function App() {
   function passRadius(radius) {
     setRadius(radius);
   }
-
+ 
   if (!emailValid) {
     return <div className='App'><LoginPage emailValidTrue={emailValidTrue} /></div>
   }
-
   return (
     <div className="App">
       <Router>

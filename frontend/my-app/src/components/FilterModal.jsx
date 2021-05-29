@@ -61,7 +61,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                     <Form>
                         <Form.Group controlId="modalForm.AddressInput1">
                             <Form.Label>Current Location</Form.Label>
-                            <Form.Control type="address" placeholder="Please type in an address" value={address} onChange={event => setAddress(event.target.value)}/>
+                            <Form.Control type="address" placeholder="Please type in an address" value={address} onChange={event => setAddress(event.target.value)} disabled />
                         </Form.Group>
                         <Form.Group controlId="formDistanceRadius">
                             <Form.Label>Distance (in Kilometers)</Form.Label>
@@ -74,7 +74,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                         </Form.Group>
                         <Form.Group controlId="modalForm.PetClinicType">
                             <Form.Label>Pet Type</Form.Label>
-                            <Form.Control as="select">
+                            <Form.Control as="select" disabled>
                             <option>Cats & Dogs</option>
                             <option>Small Rodents</option>
                             <option>Reptiles</option>
@@ -83,7 +83,7 @@ const FilterModal = ({ emailValidFalse, passAddress, passRadius }) => {
                             </Form.Control>
                         </Form.Group>   
                         <Form.Group controlId="modalForm.UrgentType">
-                            <Form.Check type="checkbox" label="Is an emergency clinic required?" />
+                            <Form.Check type="checkbox" label="Is an emergency clinic required?" disabled />
                         </Form.Group>   
                     </Form>
                 </Modal.Body>
